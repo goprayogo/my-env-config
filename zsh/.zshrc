@@ -1,5 +1,7 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# .zshrc file
+# The ZSh Shell uses oh-my-zsh, and first it is configured
+# in this file. 
+# See: https://github.com/ohmyzsh/ohmyzsh/wiki/Settings
 # Note: PATH is set in .zshenv file
 
 # Path to your oh-my-zsh installation.
