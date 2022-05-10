@@ -100,10 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Use neovim instead of vim, and set in alias
 alias vim=nvim
 
 # Activate spaceship shell prompt
 eval "$(starship init zsh)"
+
+# Activate pyenv. pyenv env vars is set in .zshenv
+eval "$(pyenv init --path)"
 
 # This loads NodeJS & NVM env vars
 export NVM_DIR="$HOME/.nvm"
