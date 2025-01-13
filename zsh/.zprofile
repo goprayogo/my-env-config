@@ -45,3 +45,6 @@ export PATH="/Users/goprayogo/Library/Application Support/JetBrains/Toolbox/scri
 
 # Set LS COLOR for ls command
 export LS_COLORS="fi=0:di=01;34:ow=01;34:ln=target"
+
+# Set PATH for engineers metrics data
+export ENG_METRICS="/Users/goprayogo/Documents/engineers-metrics"

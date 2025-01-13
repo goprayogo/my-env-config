@@ -11,4 +11,4 @@ The environment variables cater the configuration for the following dev environm
 * Python, along with `pyenv`.
 * PostGreSQL version 16, and it assumes that it is installed using `homebrew`.
 
-All `PATH` configs are in [.zshprofile](zsh/.zshprofile), and [.zshenv](zsh/.zshenv) is intentionally empty. [ohmyzsh](https://ohmyz.sh/) is configured in [.zshrc](zsh/.zshrc).
+All `PATH` configs are in [.zprofile](zsh/.zprofile), and [.zshenv](zsh/.zshenv) is intentionally empty. [ohmyzsh](https://ohmyz.sh/) is configured in [.zshrc](zsh/.zshrc).
