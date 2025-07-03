@@ -108,20 +108,22 @@ if [ -f "$HOME/.zsh_aliases" ]; then
     source "$HOME/.zsh_aliases"
 fi
 
-# Activate pyenv. pyenv env vars is set in .zshenv
-eval "$(pyenv init --path)"
-
 HISTSIZE=100
 HISTFILESIZE=100
 SAVEHIST=100
 
-# This loads NodeJS & NVM env vars
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Externalize env vars for sensitive information
+# only load env vars if the file exists
+env_files=""
+for envfile in $HOME/.*.env; do
+    if [ -f "$envfile" ]; then
+        source "$envfile"
+        env_files+="$(basename "$envfile") "
+    fi
+done
+echo "Loaded env vars from: ${env_files% }"
 
-# Load Angular CLI autocompletion.
-command -v ng >/dev/null && source <(ng completion script)
-
-# Activate spaceship shell prompt
-eval "$(starship init zsh)"
+# Initialize Starship only if it's installed
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
