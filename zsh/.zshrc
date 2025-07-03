@@ -12,8 +12,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #
-# Set ZSH_THEME to blank because using Starship prompt.
-ZSH_THEME=""
+# Set ZSH_THEME to blank if Starship is installed, otherwise set to "amuse"
+ZSH_THEME="amuse"
+if command -v starship &> /dev/null; then
+  ZSH_THEME=""
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,14 +117,17 @@ SAVEHIST=100
 
 # Externalize env vars for sensitive information
 # only load env vars if the file exists
-env_files=""
-for envfile in $HOME/.*.env; do
+env_files=()
+for envfile in "$HOME"/.*.env; do
     if [ -f "$envfile" ]; then
         source "$envfile"
-        env_files+="$(basename "$envfile") "
+        env_files+=("$(basename "$envfile")")
     fi
 done
-echo "Loaded env vars from: ${env_files% }"
+
+if [ ${#env_files[@]} -gt 0 ]; then
+    echo "Loaded env vars from: ${env_files[*]}"
+fi
 
 # Initialize Starship only if it's installed
 if command -v starship &> /dev/null; then

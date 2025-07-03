@@ -1,4 +1,7 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# check if the /opt/homeberew/bin/brew, init
+if [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # This env for BIN executables 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
