@@ -11,7 +11,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+#
+# Set ZSH_THEME to blank because using Starship prompt.
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,7 +73,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python)
+plugins=(python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,23 +101,27 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"=
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Use neovim instead of vim, and set in alias
-alias vim=nvim
-
-# Activate spaceship shell prompt
-eval "$(starship init zsh)"
+# Custom alias are in .zsh_aliases file
+if [ -f "$HOME/.zsh_aliases" ]; then
+    source "$HOME/.zsh_aliases"
+fi
 
 # Activate pyenv. pyenv env vars is set in .zshenv
 eval "$(pyenv init --path)"
 
-# This loads NodeJS & NVM env vars
-# Disable NVM in this computer
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 HISTSIZE=100
 HISTFILESIZE=100
 SAVEHIST=100
+
+# This loads NodeJS & NVM env vars
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load Angular CLI autocompletion.
+command -v ng >/dev/null && source <(ng completion script)
+
+# Activate spaceship shell prompt
+eval "$(starship init zsh)"

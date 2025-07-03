@@ -1,0 +1,5 @@
+# Set up all aliases here, so that they can be sourced in .zshrc
+
+alias g='git'
+# Use neovim instead of vim, and set in alias
+alias vim=nvim
