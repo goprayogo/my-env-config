@@ -1,0 +1,2 @@
+[alias]
+        lola = log --oneline --decorate --graph --all
