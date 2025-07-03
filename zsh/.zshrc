@@ -121,7 +121,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+command -v ng >/dev/null && source <(ng completion script)
 
 # Activate spaceship shell prompt
 eval "$(starship init zsh)"
