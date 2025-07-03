@@ -21,16 +21,14 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Adding PATH for PostGreSQL (v16)
-export PG_PATH="/opt/homebrew/opt/postgresql@16/bin"
+# Adding PATH for PostGreSQL (v17)
+export PG_PATH="/opt/homebrew/opt/postgresql@17/bin"
 export PATH="$PG_PATH:$PATH"
 # Credentials for local development
 export PGUSER="postgres"
 export PGPASSWORD="password"
 export PGHOST=localhost
 
-# Github CLI
-export GITHUB_TOKEN='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'
 
 # This env for BIN executables 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
@@ -46,5 +44,5 @@ export PATH="/Users/goprayogo/Library/Application Support/JetBrains/Toolbox/scri
 # Set LS COLOR for ls command
 export LS_COLORS="fi=0:di=01;34:ow=01;34:ln=target"
 
-# Set PATH for engineers metrics data
-export ENG_METRICS="/Users/goprayogo/Documents/engineers-metrics"
+# Set NVM PATH
+export NVM_DIR="$HOME/.nvm"
