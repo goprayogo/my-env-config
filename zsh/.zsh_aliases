@@ -1,5 +1,7 @@
+#!/bin/zsh
 # Set up all aliases here, so that they can be sourced in .zshrc
 
 alias g='git'
 alias vim=nvim # use neovim instead
 alias ls=lsd   # use https://github.com/lsd-rs/lsd
+alias py='python3'
