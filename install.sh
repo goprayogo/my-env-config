@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-# create symlinks in $HOME for all files in the zsh and git directories
+# create symlinks in $HOME for all files 
+# in the zsh and git directories
 for dir in zsh git; do
     for file in "$dir"/.*; do
         if [ -f "$file" ]; then
@@ -10,5 +11,9 @@ for dir in zsh git; do
         fi
     done
 done
+
+# Create symlinks for Starship (https://starship.rs)
+ln -sf "$(pwd)/starship/starship.toml" \
+"$HOME/.config/starship.toml"
 
 echo "Symlinks created successfully!"
