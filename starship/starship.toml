@@ -14,10 +14,10 @@ command_timeout = 6000
 # - #F0E7D8 for for OS & directory text
 format = """
 [\ue0b6](#3A405A)\
-$os[\ue0b4](fg:#3A405A bg:#AEC5EB)\
+$os$hostname[\ue0b4](fg:#3A405A bg:#AEC5EB)\
 $username[\ue0b4](fg:#AEC5EB bg:#3A405A)\
 $directory[\ue0b4](fg:#3A405A)\
-$git_branch$git_status[\ue0b4](fg:#3A405A)\
+$git_branch$git_status\
 $all
 """
 
@@ -28,6 +28,11 @@ disabled = false
 
 [os.symbols]
 Macos = ""
+
+[hostname]
+style = "fg:#F0E7D8 bg:#3A405A"
+format = "[$hostname]($style)"
+ssh_only = true
 
 [username]
 style_user = "bold fg:#3A405A bg:#AEC5EB"
@@ -40,6 +45,7 @@ aliases = {"goprayogo" = "gama"}
 style = "fg:#F0E7D8 bg:#3A405A"
 format = "[ $path]($style)"
 truncate_to_repo = true
+home_symbol = ""
 
 [git_branch]
 format = """ on [\ue0b6](fg:#3A405A)[$symbol](fg:#F0E7D8 bg:#3A405A)\
@@ -49,7 +55,7 @@ disabled = false
 
 [git_status]
 style = "bold fg:#CE4257 bg:#3A405A"
-format = """[ $all_status$ahead_behind]($style)"""
+format = """[ $all_status$ahead_behind]($style)[\ue0b4](fg:#3A405A)"""
 
 [character] 
 success_symbol = "[➜](bold green)"

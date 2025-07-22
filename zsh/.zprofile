@@ -4,7 +4,7 @@ if [ -f /opt/homebrew/bin/brew ]; then
 fi
 
 # Add XDG PATH
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # This env for BIN executables 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
