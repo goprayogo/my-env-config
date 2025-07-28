@@ -57,12 +57,11 @@ disabled = false
 
 [git_status]
 style = "bold fg:#CE4257 bg:#3A405A"
-format = """[ $all_status$ahead_behind]($style)[\ue0b4](fg:#3A405A)"""
+format = """([ $all_status$ahead_behind]($style))[\ue0b4](fg:#3A405A)"""
 
 [character] 
 success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
-
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -70,6 +69,13 @@ disabled = true
 
 [python]
 symbol = "\ue235"
+style = ""
+pyenv_version_name = true
+format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
+[\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""
+
+[golang]
+symbol = "\ue627"
 style = ""
 format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
 [\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""

@@ -1,8 +1,8 @@
 [alias]
-	lol = log --oneline --decorate --graph --all
-	lola = log --graph --all --decorate --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+        lol = log --oneline --decorate --graph --all
+        lola = log --graph --all --decorate --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
         st = status
-        addall = add .
+        a = add .
         cm = commit -m
         co = checkout
         br = branch
