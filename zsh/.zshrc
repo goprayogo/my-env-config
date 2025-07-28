@@ -129,6 +129,11 @@ if [ ${#env_files[@]} -gt 0 ]; then
     echo "Loaded env vars from: ${env_files[*]}"
 fi
 
+# source LS_COLORS file if exists
+if [ -f "$XDG_DATA_HOME/ls_colors.sh" ]; then
+    source "$XDG_DATA_HOME/ls_colors.sh"
+fi
+
 # Initialize Starship only if it's installed
 if command -v starship &> /dev/null; then
   export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
