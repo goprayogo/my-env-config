@@ -2,6 +2,14 @@
 # Set up all aliases here, so that they can be sourced in .zshrc
 
 alias g='git'
-alias vim=nvim # use neovim instead
-alias ls=lsd   # use https://github.com/lsd-rs/lsd
-alias py='python3'
+alias vim='nvim'        # use neovim instead
+
+# ls deluxe (lsd)  https://github.com/lsd-rs/lsd
+# default command, only showing the size, date, and name
+alias l='lsd --blocks size,date,name'
+alias ls='lsd'  # use lsd as default ls command
+# include permission, exluding .. and . files
+alias la='lsd --blocks permission,size,name --almost-all'        
+alias ll='lsd --long'
+# output in a tree format
+alias lstree='lsd --tree --depth 2'
