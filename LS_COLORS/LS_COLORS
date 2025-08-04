@@ -35,7 +35,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3 # core
 *INSTALL              38;5;220;1          # Documentation
 *COPYRIGHT            38;5;220;1          # Documentation
 *AUTHORS              38;5;220;1          # Documentation
-*HISTORY              38;5;220;1          # Documentation
+# *HISTORY              38;5;220;1          # Documentation
 *CONTRIBUTORS         38;5;220;1          # Documentation
 *CONTRIBUTING         38;5;220;1          # Documentation
 *CONTRIBUTING.md      38;5;220;1          # Documentation

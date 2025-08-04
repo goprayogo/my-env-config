@@ -10,12 +10,17 @@ classic: false
 # layout.
 # Possible values: permission, user, group, context, size, date, name, inode, links, git
 blocks:
-#  - permission
-  - user
-  - group
+  # - permission
+  # - user
+  # - group
+  # - size
+  # - date
+  # - name
+  - permission
   - size
   - date
-  - name
+  - git
+  - name 
 
 # == Color ==
 # This has various color options. (Will be expanded in the future.)

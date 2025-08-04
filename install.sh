@@ -1,4 +1,6 @@
-#!/bin/zsh
+#!/bin/sh bash
+# Script to apply dotfiles configuration
+# Configuration is applied by creating symlinks in the user's home directory
 
 # create symlinks in $HOME for all files 
 # in the zsh and git directories
@@ -12,8 +14,13 @@ for dir in zsh git; do
 done
 
 # Create symlinks for Starship (https://starship.rs)
-ln -sf "$(pwd)/starship/starship.toml" \
-"$HOME/.config/starship.toml"
+ln -sf "$(pwd)/starship/starship.toml" "$HOME/.config/starship.toml"
+
+# Create symlinks for ls deluxe (https://github.com/lsd-rs/lsd)
+for file in "lsd"; do
+    # create symlink for lsd configs to $XDG_CONFIG_HOME/lsd
+    ln -sf "$(pwd)/$file" "$XDG_CONFIG_HOME/lsd/$file"
+done
 
 echo "Symlinks created successfully!"
 
