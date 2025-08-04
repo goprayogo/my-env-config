@@ -46,7 +46,7 @@ aliases = {"goprayogo" = "gama"}
 style = "fg:#F0E7D8 bg:#3A405A"
 format = "[ $path]($style)"
 truncate_to_repo = true
-home_symbol = ""
+home_symbol = "\ue5ff"
 
 [git_branch]
 symbol = "\ue702"
@@ -76,6 +76,24 @@ format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
 
 [golang]
 symbol = "\ue627"
+style = ""
+format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
+[\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""
+
+[java]
+symbol = "\ue204"
+style = ""
+format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
+[\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""
+
+[nodejs]
+symbol = "\ue718"
+style = ""
+format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
+[\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""
+
+[rust]
+symbol = "\ue7a8"
 style = ""
 format = """ with [\ue0b6](fg:#3A405A)[$symbol ](fg:#F0E7D8 bg:#3A405A)\
 [\ue0b4](fg:#3A405A bg:#AEC5EB)[$version](bold bg:#AEC5EB fg:#3A405A)[\ue0b4](fg:#AEC5EB)"""
